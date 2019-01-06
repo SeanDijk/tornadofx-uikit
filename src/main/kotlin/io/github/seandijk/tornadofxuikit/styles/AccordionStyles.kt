@@ -14,6 +14,7 @@ class AccordionStyles: Stylesheet() {
                 backgroundColor = multi(Color.TRANSPARENT)
 
                 text{
+                    backgroundColor = multi(Color.RED)
                     UIKitStyles.heading
                 }
             }

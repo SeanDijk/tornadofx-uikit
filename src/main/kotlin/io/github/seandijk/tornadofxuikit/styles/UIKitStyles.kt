@@ -7,7 +7,7 @@ import tornadofx.*
 
 /**
  * All the classes get declared here so they can get added from one central point.
- * Implementations of the styles in done is thematic class added as import in the contructor.
+ * Implementations of the styles in done is thematic class added as import in the constructor.
  */
 class UIKitStyles : Stylesheet(
         ButtonStyles::class,
@@ -16,12 +16,25 @@ class UIKitStyles : Stylesheet(
         TypographyStyles::class,
         InputStyles::class,
         BadgeStyles::class,
-        AccordionStyles::class
+        AccordionStyles::class,
+        AlertStyles::class
 ) {
     companion object {
         //Components
         val ukCard by cssclass()
         val ukAccordion by cssclass()
+
+        //Alerts
+        val ukAlertPrimary by cssclass()
+        val ukAlertSucces by cssclass()
+        val ukAlertWarning by cssclass()
+        val ukAlertDanger by cssclass()
+
+        //Background
+        val ukBackgroundDefault by cssclass()
+        val ukBackgroundMuted by cssclass()
+        val ukBackgroundPrimary by cssclass()
+        val ukBackgroundSecondary by cssclass()
 
         //Text
         //-- Style modifiers
