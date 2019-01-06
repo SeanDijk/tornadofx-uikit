@@ -1,21 +1,60 @@
 package io.github.seandijk.tornadofxuikit
 
 import io.github.seandijk.tornadofxuikit.styles.UIKitStyles
+import javafx.stage.Stage
 import tornadofx.*
 
 
-class MyApp: App(ShowView::class, UIKitStyles::class)
+class MyApp: App(ShowView::class, UIKitStyles::class){
+
+    init {
+        reloadStylesheetsOnFocus()
+        reloadViewsOnFocus()
+    }
+
+    override fun start(stage: Stage) {
+        super.start(stage)
+        stage.width = 800.0
+        stage.height = 1000.0
+    }
+}
 class ShowView : View("Showing all the css elements!") {
 
     private val paddingOuterElements = 20
     private val paddingInnerElements = 8.0
 
     override val root = vbox {
-        label(title) { addClass(UIKitStyles.heading) }
-
         squeezebox {
             addClass(UIKitStyles.ukAccordion)
             fold("Text"){
+                squeezebox {
+                    paddingLeft = 16
+
+                    addClass(UIKitStyles.ukAccordion)
+
+                    fold("Style modifiers") {
+                        label("Lead") { addClass(UIKitStyles.ukTextLead) }
+                        label("Meta") { addClass(UIKitStyles.ukTextMeta) }
+                    }
+
+                    fold("Font size") {
+                        label("Small") { addClass(UIKitStyles.ukTextSmall) }
+                        label("Large") { addClass(UIKitStyles.ukTextLarge) }
+                    }
+                    fold("Font weight"){
+                        label("Bold") { addClass(UIKitStyles.ukTextBold) }
+                    }
+                    fold("Font color"){
+                        label("Muted")      { addClass(UIKitStyles.ukTextMuted) }
+                        label("Emphasis")   { addClass(UIKitStyles.ukTextEmphasis) }
+                        label("Primary")    { addClass(UIKitStyles.ukTextPrimary) }
+                        label("Success")    { addClass(UIKitStyles.ukTextSuccess) }
+                        label("Warning")    { addClass(UIKitStyles.ukTextWarning) }
+                        label("Danger")     { addClass(UIKitStyles.ukTextDanger) }
+                    }
+                }
+            }
+            fold("Badge") {
                 flowpane{
                     paddingAll = paddingOuterElements
                     hgap = paddingInnerElements
@@ -28,7 +67,6 @@ class ShowView : View("Showing all the css elements!") {
 
 
             fold("Buttons"){
-                label("Buttons") { addClass(UIKitStyles.heading) }
                 flowpane {
                     paddingAll = paddingOuterElements
                     hgap = paddingInnerElements
@@ -43,7 +81,6 @@ class ShowView : View("Showing all the css elements!") {
             }
 
             fold("Inputs") {
-                label("Inputs") { addClass(UIKitStyles.heading) }
                 vbox {
                     paddingAll = paddingOuterElements
                     spacing = paddingInnerElements
