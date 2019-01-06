@@ -48,10 +48,15 @@ class UIKitStyles : Stylesheet(
         //-- Font Weight
         val ukTextBold by cssclass()
 
-
+        //-- Text color
+        val ukTextMuted     by cssclass()
+        val ukTextEmphasis  by cssclass()
+        val ukTextPrimary   by cssclass()
+        val ukTextSuccess   by cssclass()
+        val ukTextWarning   by cssclass()
+        val ukTextDanger    by cssclass()
 
         val ukBadge by cssclass()
-
 
         //Buttons
         val ukButtonPrimary by cssclass()
@@ -59,10 +64,6 @@ class UIKitStyles : Stylesheet(
         val ukButtonDanger by cssclass()
         val ukButtonPositive by cssclass()
         val ukButtonDefault by cssclass()
-
-        //Typography
-        val heading by cssclass()
-
 
         //Input
         //--Fields
@@ -85,10 +86,10 @@ class UIKitStyles : Stylesheet(
 
 
         //Colors
-        val COLOR_PRIMARY = Color.web("#1e87f0")
-        val COLOR_PRIMARY_10pDarker = Color.web("#056ED7")
-        val COLOR_PRIMARY_20pDarker = Color.web("#0054BD")
-        val COLOR_SECONDARY = Color.web("#222")
+        val COLOR_PRIMARY = Color.web("#1e87f0")!!
+        val COLOR_PRIMARY_10pDarker = Color.web("#056ED7")!!
+        val COLOR_PRIMARY_20pDarker = Color.web("#0054BD")!!
+        val COLOR_SECONDARY = Color.web("#222")!!
 
 
         val COLOR_DANGER = c("#d50000")
