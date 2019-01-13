@@ -25,10 +25,11 @@ class UIKitStyles : Stylesheet(
         val ukAccordion by cssclass()
 
         //Alerts
-        val ukAlertPrimary by cssclass()
-        val ukAlertSucces by cssclass()
-        val ukAlertWarning by cssclass()
-        val ukAlertDanger by cssclass()
+        val ukAlertDefault   by cssclass()
+        val ukAlertPrimary   by cssclass()
+        val ukAlertSucces    by cssclass()
+        val ukAlertWarning   by cssclass()
+        val ukAlertDanger    by cssclass()
 
         //Background
         val ukBackgroundDefault by cssclass()

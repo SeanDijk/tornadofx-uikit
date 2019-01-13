@@ -1,5 +1,6 @@
 package io.github.seandijk.tornadofxuikit.styles
 
+import io.github.seandijk.tornadofxuikit.styles.UIKitStyles.Companion.ukTextBold
 import io.github.seandijk.tornadofxuikit.styles.UIKitStyles.Companion.ukTextDanger
 import io.github.seandijk.tornadofxuikit.styles.UIKitStyles.Companion.ukTextEmphasis
 import io.github.seandijk.tornadofxuikit.styles.UIKitStyles.Companion.ukTextLarge
@@ -28,11 +29,13 @@ class TypographyStyles: Stylesheet() {
         }
 
         ukTextSmall{
-            fontSize = 14.px
-            fontWeight = FontWeight.NORMAL
+            +Mixins.smallText
         }
         ukTextLarge{
             +Mixins.largeText
+        }
+        ukTextBold{
+            fontWeight = FontWeight.BOLD
         }
 
 
@@ -64,8 +67,8 @@ class TypographyStyles: Stylesheet() {
             fontWeight = FontWeight.LIGHT
         }
         val smallText = mixin {
-            fontSize = 24.px
-            fontWeight = FontWeight.LIGHT
+            fontSize = 14.px
+            fontWeight = FontWeight.NORMAL
         }
         val emphasis = mixin {
             textFill = c("#222")
